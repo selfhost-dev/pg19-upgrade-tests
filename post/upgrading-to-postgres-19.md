@@ -4,7 +4,7 @@
 
 PostgreSQL 19 was released on November 19, 2026. On a 21.3 GB database, `pg_upgrade --link` moved us from 18.7 to 19.0 with 1.9 seconds of client downtime. `--copy` took 5.4 minutes, and `pg_dump`/`pg_restore` took 25.6 minutes. The new features were not the risk. The risk was the changed defaults and the removed settings, and `pg_upgrade --check` does not see most of them.
 
-We tested the upgrade on one AWS EC2 m7i.xlarge (4 vCPU, 16 GB RAM, gp3 disk) in ap-south-1, with two datasets: 1.67 GB and 21.3 GB. We broke the upgrade on purpose ten times and kept the exact errors. Every number in this post comes from runs on November 24, 2026, with PGDG packages 18.7 and 19.0. The scripts are in the `pg19-upgrade-tests` repository.
+We tested the upgrade on one AWS EC2 m7i.xlarge (4 vCPU, 16 GB RAM, gp3 disk) in ap-south-1, with two datasets: 1.67 GB and 21.3 GB. We broke the upgrade on purpose ten times and kept the exact errors. Every number in this post comes from runs on November 24, 2026, with PGDG packages 18.7 and 19.0. The scripts, the raw output of every run and a numbers sheet are in [selfhost-dev/pg19-upgrade-tests](https://github.com/selfhost-dev/pg19-upgrade-tests).
 
 ## What changed in Postgres 19 that matters for your upgrade
 
