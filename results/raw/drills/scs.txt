@@ -1,0 +1,55 @@
+# drill: scs  (2026-11-24T07:43:45Z, 18.7 -> 19.0)
+t
+WARNING:  nonstandard use of \\ in a string literal
+LINE 1: create table paths (id int, p text default 'C:\\temp\\new', ...
+                                                   ^
+HINT:  Use the escape string syntax for backslashes, e.g., E'\\'.
+WARNING:  nonstandard use of \\ in a string literal
+LINE 1: comment on table paths is 'Windows path C:\\temp';
+                                  ^
+HINT:  Use the escape string syntax for backslashes, e.g., E'\\'.
+WARNING:  nonstandard use of escape in a string literal
+LINE 1: insert into paths values (1, 'C:\temp', 'tab\there');
+                                     ^
+HINT:  Use the escape string syntax for escapes, e.g., E'\r\n'.
+WARNING:  nonstandard use of escape in a string literal
+LINE 1: insert into paths values (1, 'C:\temp', 'tab\there');
+                                                ^
+HINT:  Use the escape string syntax for escapes, e.g., E'\r\n'.
+
+### 18: stored values
+C:	emp|tab	here|Windows path C:\temp
+'C:\\temp\\new'::text
+default value of a new row: C:\temp\new
+
+### 18 server setting
+off
+
+### dump made with 18 pg_dump: SET lines + DDL
+15:SET standard_conforming_strings = off;
+33:    p text DEFAULT 'C:\\temp\\new'::text,
+44:COMMENT ON TABLE public.paths IS 'Windows path C:\\temp';
+
+### load the 18 dump into 19 (psql, ON_ERROR_STOP off)
+psql:/data/drill/old18.sql:15: ERROR:  non-standard string literals are not supported
+ set_config 
+psql:/data/drill/old18.sql:20: ERROR:  unrecognized configuration parameter "escape_string_warning"
+
+### 19: what arrived
+C:	emp|tab	here|Windows path C:\\temp
+C:\temp\new||Windows path C:\\temp
+'C:\\temp\\new'::text
+default value of a new row: C:\temp\new
+default value of a new row: C:\\temp\\new
+
+### 19: try to turn it off
+ERROR:  non-standard string literals are not supported
+exit=1
+
+### fix: dump the same 18 server with the 19 pg_dump
+15:SET standard_conforming_strings = on;
+32:    p text DEFAULT 'C:\temp\new'::text,
+43:COMMENT ON TABLE public.paths IS 'Windows path C:\temp';
+load exit=0
+C:	emp|tab	here|Windows path C:\temp
+C:\temp\new||Windows path C:\temp

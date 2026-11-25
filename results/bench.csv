@@ -1,0 +1,28 @@
+vacuum,18,1,vacuum_parallel3_ms=23298,launched 2 parallel vacuum workers for index vacuuming (planned: 2,2026-11-24T09:26:45Z
+vacuum,18,2,vacuum_parallel3_ms=24463,launched 2 parallel vacuum workers for index vacuuming (planned: 2,2026-11-24T09:30:55Z
+vacuum,19,1,vacuum_parallel3_ms=23458,launched 2 parallel vacuum workers for index vacuuming (planned: 2,2026-11-24T09:35:02Z
+vacuum,19,2,vacuum_parallel3_ms=24459,launched 2 parallel vacuum workers for index vacuuming (planned: 2,2026-11-24T09:39:12Z
+pgbench,18,1,tps=4291.804019,latency_ms=3.728,2026-11-24T09:47:44Z
+pgbench,19,1,tps=6211.244921,latency_ms=2.576,2026-11-24T09:49:55Z
+pgbench,18,2,tps=6563.171911,latency_ms=2.438,2026-11-24T09:52:07Z
+pgbench,19,2,tps=6525.439497,latency_ms=2.452,2026-11-24T09:54:18Z
+pgbench,18,3,tps=6485.456698,latency_ms=2.467,2026-11-24T09:56:29Z
+pgbench,19,3,tps=6546.720841,latency_ms=2.444,2026-11-24T09:58:41Z
+autovacuum,18,1,autovacuum_elapsed: 119.63 s,,2026-11-24T10:20:14Z
+autovacuum,19,1,autovacuum_elapsed: 118.93 s,parallel workers: index vacuum: 2 planned,2026-11-24T10:26:01Z
+jit,19,1,jit=off,ms=330,2026-11-24T10:53:07Z
+jit,19,1,jit=on,ms=875,2026-11-24T10:53:08Z
+jit,19,2,jit=off,ms=331,2026-11-24T10:53:09Z
+jit,19,2,jit=on,ms=348,2026-11-24T10:53:09Z
+jit,19,3,jit=off,ms=328,2026-11-24T10:53:09Z
+jit,19,3,jit=on,ms=349,2026-11-24T10:53:10Z
+jit,19,4,jit=off,ms=326,2026-11-24T10:53:10Z
+jit,19,4,jit=on,ms=346,2026-11-24T10:53:10Z
+jit,19,5,jit=off,ms=330,2026-11-24T10:53:11Z
+jit,19,5,jit=on,ms=346,2026-11-24T10:53:11Z
+fk,18,1,with_fk_ms=21191,no_fk_ms=2567,fk_cost_ms=18624,2026-11-24T10:53:40Z
+fk,18,2,with_fk_ms=19707,no_fk_ms=2594,fk_cost_ms=17113,2026-11-24T10:54:02Z
+fk,18,3,with_fk_ms=19736,no_fk_ms=2568,fk_cost_ms=17168,2026-11-24T10:54:24Z
+fk,19,1,with_fk_ms=11638,no_fk_ms=2537,fk_cost_ms=9101,2026-11-24T10:54:42Z
+fk,19,2,with_fk_ms=10009,no_fk_ms=2538,fk_cost_ms=7471,2026-11-24T10:54:55Z
+fk,19,3,with_fk_ms=9932,no_fk_ms=2515,fk_cost_ms=7417,2026-11-24T10:55:08Z

@@ -1,0 +1,15 @@
+[10:20:14] autovacuum 18 1 autovacuum_elapsed: 119.63 s 
+[10:26:01] autovacuum 19 1 autovacuum_elapsed: 118.93 s parallel workers: index vacuum: 2 planned
+[10:26:50] jit 19 1 jit=off ms=330
+[10:26:50] jit 19 1 jit=on ms=330
+[10:26:50] jit 19 2 jit=off ms=330
+[10:26:51] jit 19 2 jit=on ms=327
+[10:26:51] jit 19 3 jit=off ms=331
+[10:26:51] jit 19 3 jit=on ms=329
+[10:26:52] jit 19 4 jit=off ms=327
+[10:26:52] jit 19 4 jit=on ms=327
+[10:26:52] jit 19 5 jit=off ms=327
+[10:26:53] jit 19 5 jit=on ms=326
+NOTICE:  created replication slot "s" on publisher
+[10:51:06] logical-large-2: drain=89718ms lag_at_cutover=342376B initial_sync=776930ms cutover=318ms (catch-up=263ms) extra_disk=38618MB seq18=142777 seq19_before=1
+RERUN DONE

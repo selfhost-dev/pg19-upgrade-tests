@@ -1,0 +1,20 @@
+### archive after 18 (archive_mode on since initdb)
+000000010000000000000001
+### 19 pg_wal/archive_status before pg_upgrade
+pg_upgrade exit=0
+### 19 pg_wal and archive_status after pg_upgrade
+/data/arch/c19/pg_wal:
+00000001000000000000000B
+00000001000000000000000C
+archive_status
+summaries
+
+/data/arch/c19/pg_wal/archive_status:
+### archive after 19 started
+000000010000000000000001
+000000010000000000000002
+000000010000000000000008
+00000001000000000000000A
+### 19 archiver
+2|00000001000000000000000A|6|000000010000000000000001
+### 19 server.log (archive lines)

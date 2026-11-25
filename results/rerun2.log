@@ -1,0 +1,19 @@
+[10:53:07] jit 19 1 jit=off ms=330
+[10:53:08] jit 19 1 jit=on ms=875
+[10:53:09] jit 19 2 jit=off ms=331
+[10:53:09] jit 19 2 jit=on ms=348
+[10:53:09] jit 19 3 jit=off ms=328
+[10:53:10] jit 19 3 jit=on ms=349
+[10:53:10] jit 19 4 jit=off ms=326
+[10:53:10] jit 19 4 jit=on ms=346
+[10:53:11] jit 19 5 jit=off ms=330
+[10:53:11] jit 19 5 jit=on ms=346
+NOTICE:  table "child" does not exist, skipping
+[10:53:40] fk 18 1 with_fk_ms=21191 no_fk_ms=2567 fk_cost_ms=18624
+[10:54:02] fk 18 2 with_fk_ms=19707 no_fk_ms=2594 fk_cost_ms=17113
+[10:54:24] fk 18 3 with_fk_ms=19736 no_fk_ms=2568 fk_cost_ms=17168
+NOTICE:  table "child" does not exist, skipping
+[10:54:42] fk 19 1 with_fk_ms=11638 no_fk_ms=2537 fk_cost_ms=9101
+[10:54:55] fk 19 2 with_fk_ms=10009 no_fk_ms=2538 fk_cost_ms=7471
+[10:55:08] fk 19 3 with_fk_ms=9932 no_fk_ms=2515 fk_cost_ms=7417
+RERUN2 DONE

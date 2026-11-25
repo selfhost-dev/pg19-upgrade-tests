@@ -1,0 +1,16 @@
+# drill: toast  (2026-11-24T07:41:26Z, 18.7 -> 19.0)
+
+### 19 default
+lz4
+
+### rows written with pglz
+pglz|2000
+
+### after REPACK (default now lz4)
+pglz|2000
+
+### after VACUUM FULL
+pglz|2000
+
+### after UPDATE body = body || ''
+lz4|2000

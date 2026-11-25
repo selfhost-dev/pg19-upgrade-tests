@@ -1,0 +1,33 @@
+# drill: btree_gist  (2026-11-24T07:40:50Z, 18.7 -> 19.0)
+
+### pg_upgrade --check
+Performing Consistency Checks
+-----------------------------
+Checking cluster versions                                     ok
+Checking database connection settings                         ok
+Checking for unsupported encodings                            ok
+Checking names of databases, roles, and tablespaces           ok
+Checking database user is the install user                    ok
+Checking for prepared transactions                            ok
+Checking oldestXID and oldestMultiXid consistency             ok
+Checking for contrib/isn with bigint-passing mismatch         ok
+Checking logical replication slots                            ok
+Checking subscription state                                   ok
+Checking data type usage                                      ok
+Checking for objects affected by Unicode update               ok
+Checking for not-null constraint inconsistencies              ok
+Checking for uses of gist_inet_ops/gist_cidr_ops              fatal
+
+Your installation contains indexes that use the btree_gist extension's
+gist_inet_ops or gist_cidr_ops operator classes, which cannot be
+binary-upgraded.  Replace them with indexes that use the built-in GiST
+inet_ops operator class.
+A list of indexes with the problem is in the file:
+    /data/drill/c19/pg_upgrade_output.d/20261124T074055.268/gist_inet_ops.txt
+Failure, exiting
+exit=1
+
+### file named in the output
+In database: postgres
+  public.hosts_ip_gist
+  public.hosts_net_gist

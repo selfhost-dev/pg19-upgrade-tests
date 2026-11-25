@@ -1,0 +1,1 @@
+autovacuum_max_parallel_workers|3|Maximum number of parallel workers that can be used by a single autovacuum worker.

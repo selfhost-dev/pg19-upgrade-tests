@@ -1,0 +1,8 @@
+### 18: try to publish sequences (a 19 feature)
+ERROR:  syntax error at or near "sequences"
+LINE 1: create publication pseq for all sequences
+                                        ^
+### 19 sequence before fix: 1 (18 has 133982)
+### 19: insert before the sequence fix
+ERROR:  duplicate key value violates unique constraint "orders_pkey"
+DETAIL:  Key (id)=(1) already exists.

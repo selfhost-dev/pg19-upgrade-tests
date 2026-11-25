@@ -1,0 +1,18 @@
+# extension install on 19.0 (2026-11-24T08:08:24Z)
+vector|0.8.7|
+postgis|3.7.0|
+pg_cron|1.6|
+pg_stat_statements|1.13|
+timescaledb|not installed|ERROR:  extension "timescaledb" is not available
+
+### available versions on 19
+pg_cron|1.6
+pg_stat_statements|1.13
+postgis|3.7.0
+vector|0.8.7
+
+### smoke tests on 19
+1
+POSTGIS="3.7.0 1fdbb1c" [EXTENSION] PGSQL="190" GEOS="3.15.0-CAPI-1.21.0" PROJ="9.9.0 NETWORK_ENABLED=OFF URL_ENDPOINT=https://cdn.proj.org USER_WRITABLE_DIRECTORY=/var/lib/postgresql/.local/share/pro
+1
+t

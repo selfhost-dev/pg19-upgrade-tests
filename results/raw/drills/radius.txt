@@ -1,0 +1,43 @@
+# drill: radius  (2026-11-24T07:40:37Z, 18.7 -> 19.0)
+
+### 18 accepts the radius line
+1|radius
+
+### pg_upgrade --check (old pg_hba.conf has radius)
+Performing Consistency Checks
+-----------------------------
+Checking cluster versions                                     ok
+Checking database connection settings                         ok
+Checking for unsupported encodings                            ok
+Checking names of databases, roles, and tablespaces           ok
+Checking database user is the install user                    ok
+Checking for prepared transactions                            ok
+Checking oldestXID and oldestMultiXid consistency             ok
+Checking for contrib/isn with bigint-passing mismatch         ok
+Checking logical replication slots                            ok
+Checking subscription state                                   ok
+Checking data type usage                                      ok
+Checking for objects affected by Unicode update               ok
+Checking for not-null constraint inconsistencies              ok
+Checking for uses of gist_inet_ops/gist_cidr_ops              ok
+Checking for presence of required libraries                   ok
+Checking database user is the install user                    ok
+Checking for prepared transactions                            ok
+Checking new cluster tablespace directories                   ok
+
+*Clusters are compatible*
+exit=0
+
+### start 19 with the old pg_hba.conf copied over
+waiting for server to start.... stopped waiting
+pg_ctl: could not start server
+Examine the log output.
+exit=1
+
+### server.log
+2026-11-24 07:40:43.523 UTC [1116] LOG:  starting PostgreSQL 19.0 (Debian 19.0-2.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-11-24 07:40:43.524 UTC [1116] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5451"
+2026-11-24 07:40:43.528 UTC [1116] LOG:  invalid authentication method "radius"
+2026-11-24 07:40:43.528 UTC [1116] CONTEXT:  line 1 of configuration file "/data/drill/c19/pg_hba.conf"
+2026-11-24 07:40:43.529 UTC [1116] FATAL:  could not load /data/drill/c19/pg_hba.conf
+2026-11-24 07:40:43.534 UTC [1116] LOG:  database system is shut down

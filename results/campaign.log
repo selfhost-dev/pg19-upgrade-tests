@@ -1,0 +1,70 @@
+=== 2026-11-24T08:08:52Z upgrade-pg.sh copy small 1
+[08:09:25] pg-copy-small-1: downtime=26007ms pg_upgrade=25695ms stop=102ms start=107ms extra_disk=1573MB check=605ms analyze=52ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:09:25Z upgrade-pg.sh link small 1
+[08:09:35] pg-link-small-1: downtime=1871ms pg_upgrade=1609ms stop=102ms start=106ms extra_disk=30MB check=599ms analyze=53ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:09:35Z upgrade-pg.sh clone small 1
+[08:09:45] pg-clone-small-1: downtime=1871ms pg_upgrade=1614ms stop=102ms start=107ms extra_disk=46MB check=601ms analyze=53ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:09:45Z upgrade-pg.sh swap small 1
+[08:09:55] pg-swap-small-1: downtime=1872ms pg_upgrade=1607ms stop=102ms start=107ms extra_disk=7MB check=603ms analyze=53ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:09:55Z upgrade-pg.sh copy small 2
+[08:10:28] pg-copy-small-2: downtime=26005ms pg_upgrade=25703ms stop=102ms start=107ms extra_disk=1573MB check=600ms analyze=53ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:10:28Z upgrade-pg.sh link small 2
+[08:10:38] pg-link-small-2: downtime=1873ms pg_upgrade=1603ms stop=102ms start=107ms extra_disk=12MB check=587ms analyze=52ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:10:38Z upgrade-pg.sh clone small 2
+[08:10:47] pg-clone-small-2: downtime=1873ms pg_upgrade=1602ms stop=102ms start=107ms extra_disk=13MB check=593ms analyze=53ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:10:47Z upgrade-pg.sh swap small 2
+[08:10:57] pg-swap-small-2: downtime=1871ms pg_upgrade=1636ms stop=102ms start=108ms extra_disk=10MB check=590ms analyze=52ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:10:57Z upgrade-pg.sh copy small 3
+[08:11:31] pg-copy-small-3: downtime=26010ms pg_upgrade=25701ms stop=102ms start=107ms extra_disk=1572MB check=642ms analyze=52ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:11:31Z upgrade-pg.sh link small 3
+[08:11:40] pg-link-small-3: downtime=1872ms pg_upgrade=1575ms stop=102ms start=107ms extra_disk=7MB check=606ms analyze=51ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:11:40Z upgrade-pg.sh clone small 3
+[08:11:50] pg-clone-small-3: downtime=1872ms pg_upgrade=1599ms stop=102ms start=107ms extra_disk=13MB check=595ms analyze=53ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:11:50Z upgrade-pg.sh swap small 3
+[08:11:59] pg-swap-small-3: downtime=1874ms pg_upgrade=1636ms stop=102ms start=107ms extra_disk=7MB check=582ms analyze=54ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:11:59Z upgrade-pg.sh copy large 1
+[08:17:42] pg-copy-large-1: downtime=326148ms pg_upgrade=325908ms stop=102ms start=107ms extra_disk=20436MB check=655ms analyze=68ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:17:42Z upgrade-pg.sh link large 1
+[08:17:59] pg-link-large-1: downtime=1870ms pg_upgrade=1610ms stop=102ms start=107ms extra_disk=14MB check=632ms analyze=56ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:17:59Z upgrade-pg.sh clone large 1
+[08:18:21] pg-clone-large-1: downtime=1911ms pg_upgrade=1639ms stop=102ms start=107ms extra_disk=14MB check=616ms analyze=56ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:18:21Z upgrade-pg.sh swap large 1
+[08:18:38] pg-swap-large-1: downtime=1979ms pg_upgrade=1635ms stop=102ms start=107ms extra_disk=14MB check=631ms analyze=55ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:18:38Z upgrade-pg.sh copy large 2
+[08:24:15] pg-copy-large-2: downtime=320443ms pg_upgrade=320123ms stop=102ms start=107ms extra_disk=20436MB check=604ms analyze=63ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:24:15Z upgrade-pg.sh link large 2
+[08:24:32] pg-link-large-2: downtime=1785ms pg_upgrade=1572ms stop=102ms start=107ms extra_disk=1MB check=595ms analyze=55ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:24:32Z upgrade-pg.sh clone large 2
+[08:24:53] pg-clone-large-2: downtime=1915ms pg_upgrade=1609ms stop=102ms start=107ms extra_disk=17MB check=615ms analyze=54ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:24:53Z upgrade-pg.sh swap large 2
+[08:25:10] pg-swap-large-2: downtime=1904ms pg_upgrade=1626ms stop=102ms start=107ms extra_disk=13MB check=607ms analyze=54ms stats_cols=14 ext_before=1 ext_after=1
+=== 2026-11-24T08:25:10Z dump-restore.sh small 1
+[08:26:00] dump-small-1: downtime=34075ms dump=9700ms restore=24375ms extra_disk=3101MB dump_size=29MB analyze=249ms stats_cols=0 ext=0
+=== 2026-11-24T08:26:00Z dump-restore.sh small 2
+[08:26:50] dump-small-2: downtime=35160ms dump=9681ms restore=25479ms extra_disk=3100MB dump_size=29MB analyze=250ms stats_cols=0 ext=0
+=== 2026-11-24T08:26:50Z dump-restore.sh small 3
+[08:27:40] dump-small-3: downtime=34071ms dump=9709ms restore=24362ms extra_disk=3101MB dump_size=29MB analyze=246ms stats_cols=0 ext=0
+=== 2026-11-24T08:27:40Z dump-restore.sh large 1
+[08:55:44] dump-large-1: downtime=1535012ms dump=136114ms restore=1398898ms extra_disk=41898MB dump_size=354MB analyze=73ms stats_cols=10 ext=0
+=== 2026-11-24T08:55:44Z logical.sh small 1
+[08:57:39] logical-small-1: initial_sync=54252ms cutover=282ms (catch-up=245ms) extra_disk=4014MB seq18=108567 seq19_before=1
+=== 2026-11-24T08:57:39Z logical.sh large 1
+[09:21:08] logical-large-1: initial_sync=776949ms cutover=21685ms (catch-up=21634ms) extra_disk=39383MB seq18=133982 seq19_before=1
+=== 2026-11-24T09:21:08Z bench.sh fk
+[09:22:40] fk 19 1 with_fk_ms=11677 no_fk_ms=2532 fk_cost_ms=9145
+[09:22:52] fk 19 2 with_fk_ms=10009 no_fk_ms=2538 fk_cost_ms=7471
+[09:23:05] fk 19 3 with_fk_ms=9960 no_fk_ms=2600 fk_cost_ms=7360
+=== 2026-11-24T09:23:06Z bench.sh vacuum
+[09:30:55] vacuum 18 2 vacuum_parallel3_ms=24463 launched 2 parallel vacuum workers for index vacuuming (planned: 2
+[09:35:02] vacuum 19 1 vacuum_parallel3_ms=23458 launched 2 parallel vacuum workers for index vacuuming (planned: 2
+[09:39:12] vacuum 19 2 vacuum_parallel3_ms=24459 launched 2 parallel vacuum workers for index vacuuming (planned: 2
+=== 2026-11-24T09:39:44Z bench.sh autovacuum
+=== 2026-11-24T09:45:03Z bench.sh pgbench
+[09:54:18] pgbench 19 2 tps=6525.439497 latency_ms=2.452
+[09:56:29] pgbench 18 3 tps=6485.456698 latency_ms=2.467
+[09:58:41] pgbench 19 3 tps=6546.720841 latency_ms=2.444
+=== 2026-11-24T09:58:51Z bench.sh jit
+[10:08:35] jit 19 2 jit=on ms=109653
+[10:10:25] jit 19 3 jit=off ms=109614
+[10:12:14] jit 19 3 jit=on ms=109531
+=== 2026-11-24T10:14:04Z CAMPAIGN DONE

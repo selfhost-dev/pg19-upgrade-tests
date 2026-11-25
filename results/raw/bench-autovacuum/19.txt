@@ -1,0 +1,17 @@
+2026-11-24 10:25:58.791 UTC [51539] LOG:  automatic vacuum of table "postgres.public.bloat": index scans: 1
+	pages: 0 removed, 224300 remain, 224300 scanned (100.00% of total), 0 eagerly scanned
+	tuples: 2857142 removed, 17142858 remain, 0 are dead but not yet removable
+	removable cutoff: 681, which was 0 XIDs old when operation ended
+	new relfrozenxid: 681, which is 18 XIDs ahead of previous value
+	frozen: 224300 pages from table (100.00% of total) had 17142858 tuples frozen
+	visibility map: 224300 pages set all-visible, 224300 pages set all-frozen (0 were all-visible)
+	index scan needed: 224300 pages from table (100.00% of total) had 6857142 dead item identifiers removed
+	parallel workers: index vacuum: 2 planned, 2 launched in total
+	index "bloat_pkey": pages: 109675 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	index "bloat_a_idx": pages: 20286 in total, 3184 newly deleted, 3184 currently deleted, 0 reusable
+	index "bloat_b_idx": pages: 144172 in total, 0 newly deleted, 0 currently deleted, 0 reusable
+	avg read rate: 1.083 MB/s, avg write rate: 32.632 MB/s
+	buffer usage: 956298 hits, 16490 reads, 496797 dirtied
+	WAL usage: 951679 records, 496796 full page images, 3035783629 bytes, 2926740380 full page image bytes, 0 buffers full
+	memory usage: dead item storage 11.00 MB accumulated across 1 reset (limit 1024.00 MB each)
+	system usage: CPU: user: 4.23 s, system: 0.43 s, elapsed: 118.93 s

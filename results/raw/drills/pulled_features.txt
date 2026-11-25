@@ -1,0 +1,38 @@
+# drill: pulled_features  (2026-11-24T07:41:07Z, 18.7 -> 19.0)
+
+### MERGE PARTITIONS
+ERROR:  syntax error at or near "merge"
+LINE 1: alter table m merge partitions (m1, m2) into m12
+                      ^
+
+### SPLIT PARTITION
+ERROR:  syntax error at or near "split"
+LINE 1: alter table m split partition m1 into (partition m1a for val...
+                      ^
+
+### SQL/PGQ CREATE PROPERTY GRAPH
+ERROR:  syntax error at or near "property"
+LINE 1: create property graph g vertex tables (m)
+               ^
+
+### SQL/PGQ GRAPH_TABLE
+ERROR:  syntax error at or near "match"
+LINE 1: select * from graph_table (g match (a) columns (a.id))
+                                     ^
+
+### FOR PORTION OF
+ERROR:  syntax error at or near "for"
+LINE 1: update r for portion of valid from '2026-01-01' to '2026-02-...
+                 ^
+
+### pg_get_*_ddl functions
+(empty above = none)
+
+### online checksum toggle (pg_enable_data_checksums)
+ERROR:  function pg_enable_data_checksums() does not exist
+LINE 1: select pg_enable_data_checksums()
+               ^
+DETAIL:  There is no function of that name.
+
+### REPACK CONCURRENTLY (shipped)
+exit=0

@@ -1,0 +1,1 @@
+psql:/data/run/globals.sql:16: ERROR:  role "postgres" already exists

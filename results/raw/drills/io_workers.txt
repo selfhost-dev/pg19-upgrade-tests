@@ -1,0 +1,11 @@
+# drill: io_workers  (2026-11-24T07:40:33Z, 18.7 -> 19.0)
+
+### start 19 with io_workers = 4 in postgresql.conf
+waiting for server to start.... stopped waiting
+pg_ctl: could not start server
+Examine the log output.
+exit=1
+
+### server.log
+2026-11-24 07:40:37.032 GMT [944] LOG:  unrecognized configuration parameter "io_workers" in file "/data/drill/c19/postgresql.conf" line 951
+2026-11-24 07:40:37.032 GMT [944] FATAL:  configuration file "/data/drill/c19/postgresql.conf" contains errors

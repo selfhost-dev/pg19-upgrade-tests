@@ -1,0 +1,6 @@
+default_toast_compression: pglz -> lz4
+jit: on -> off
+log_lock_waits: off -> on
+max_locks_per_transaction: 64 -> 128
+server_version: 18.7 (Debian 18.7-1.pgdg13+5) -> 19.0 (Debian 19.0-2.pgdg13+1)
+server_version_num: 180007 -> 190000

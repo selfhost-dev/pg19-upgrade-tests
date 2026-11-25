@@ -1,0 +1,4 @@
+# drill: max_locks  (2026-11-24T07:43:18Z, 18.7 -> 19.0)
+18 max_locks_per_transaction=64 max_connections=100: one transaction locks ~14960 tables; at ~14980 -> ERROR:  out of shared memory
+19 max_locks_per_transaction=64 max_connections=100: one transaction locks ~8750 tables; at ~8769 -> ERROR:  out of shared memory
+19 max_locks_per_transaction=128 max_connections=100: one transaction locks ~17519 tables; at ~17539 -> ERROR:  out of shared memory

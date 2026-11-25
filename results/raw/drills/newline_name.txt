@@ -1,0 +1,30 @@
+# drill: newline_name  (2026-11-24T07:40:56Z, 18.7 -> 19.0)
+
+### 18: names with a newline
+db|sales
+eu
+role|report
+er
+
+### pg_upgrade --check
+Performing Consistency Checks
+-----------------------------
+Checking cluster versions                                     ok
+Checking database connection settings                         ok
+Checking for unsupported encodings                            ok
+Checking names of databases, roles, and tablespaces           fatal
+
+Your installation contains databases, roles, or tablespaces with names
+with invalid characters (newline or carriage return).  To fix this,
+rename these objects.
+A list of all objects with invalid names is in the file:
+    /data/drill/c19/pg_upgrade_output.d/20261124T074100.548/db_role_tablespace_invalid_names.txt
+Failure, exiting
+exit=1
+
+### files named in the output
+-- db_role_tablespace_invalid_names.txt
+1 : database name = "sales
+eu"
+2 : role name = "report
+er"

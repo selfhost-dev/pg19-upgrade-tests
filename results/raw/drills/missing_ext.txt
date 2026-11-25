@@ -1,0 +1,41 @@
+# drill: missing_ext  (2026-11-24T07:41:01Z, 18.7 -> 19.0)
+
+### 18: installed
+timescaledb|2.32.0
+
+### 19: timescaledb files present?
+no timescaledb library for 19
+
+### pg_upgrade --check
+Performing Consistency Checks
+-----------------------------
+Checking cluster versions                                     ok
+Checking database connection settings                         ok
+Checking for unsupported encodings                            ok
+Checking names of databases, roles, and tablespaces           ok
+Checking database user is the install user                    ok
+Checking for prepared transactions                            ok
+Checking oldestXID and oldestMultiXid consistency             ok
+Checking for contrib/isn with bigint-passing mismatch         ok
+Checking logical replication slots                            ok
+Checking subscription state                                   ok
+Checking data type usage                                      ok
+Checking for objects affected by Unicode update               ok
+Checking for not-null constraint inconsistencies              ok
+Checking for uses of gist_inet_ops/gist_cidr_ops              ok
+Checking for presence of required libraries                   fatal
+
+Your installation references loadable libraries that are missing from the
+new installation.  You can add these libraries to the new installation,
+or remove the functions using them from the old installation.  A list of
+problem libraries is in the file:
+    /data/drill/c19/pg_upgrade_output.d/20261124T074106.730/loadable_libraries.txt
+Failure, exiting
+exit=1
+
+### files named in the output
+-- loadable_libraries.txt
+could not load library "timescaledb": ERROR:  could not access file "timescaledb": No such file or directory
+In database: postgres
+could not load library "timescaledb-2.32.0": ERROR:  could not access file "timescaledb-2.32.0": No such file or directory
+In database: postgres

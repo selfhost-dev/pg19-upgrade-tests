@@ -1,0 +1,68 @@
+# Managed PostgreSQL 18 -> 19 logical replication test on the Selfhost.dev UAT environment, 2026-11-24.
+# Produced by hand with psql from a laptop against two new managed instances (18.7, 19.0); both were deleted after the test.
+# Redacted: instance hostnames, private IP addresses, platform role names, the password.
+
+### roles granted to <platform-role> (18)
+pg_checkpoint, pg_create_subscription, pg_maintain, pg_monitor, pg_read_all_data, pg_signal_backend, pg_use_reserved_connections, pg_write_all_data, <platform-role>
+### 18: table + publication
+CREATE TABLE
+INSERT 0 1000
+ERROR:  permission denied for database postgres
+ pubname | puballtables 
+---------+--------------
+(0 rows)
+
+### 18: publication for all tables
+ERROR:  permission denied for database postgres
+### 19: table + subscription to 18 (public hostname)
+CREATE TABLE
+ERROR:  permission denied for database postgres
+### 19: subscription to 18 (private address <private-ip>)
+ERROR:  permission denied for database postgres
+### 19: subscription without connecting (connect = false)
+ERROR:  permission denied for database postgres
+### 18: logical slot as admin
+ERROR:  permission denied to use replication slots
+DETAIL:  Only roles with the REPLICATION attribute may use replication slots.
+### 19: logical slot as admin (19 can raise effective_wal_level on demand)
+ERROR:  permission denied to use replication slots
+DETAIL:  Only roles with the REPLICATION attribute may use replication slots.
+ effective_wal_level 
+---------------------
+ replica
+(1 row)
+
+ERROR:  permission denied to use replication slots
+DETAIL:  Only roles with the REPLICATION attribute may use replication slots.
+
+### 18: database owned by admin, then publication
+CREATE DATABASE
+CREATE TABLE
+INSERT 0 1000
+WARNING:  "wal_level" is insufficient to publish logical changes
+HINT:  Set "wal_level" to "logical" before creating subscriptions.
+CREATE PUBLICATION
+ pubname 
+---------
+ p
+(1 row)
+
+### 18: role with REPLICATION created by admin
+ERROR:  permission denied to create role
+DETAIL:  Only roles with the REPLICATION attribute may create roles with the REPLICATION attribute.
+### 18: rolreplication of <platform-role>
+<platform-role>|t|f
+<platform-role>|f|f
+<platform-admin>|t|t
+### 19: database owned by admin, then subscription to 18
+CREATE DATABASE
+CREATE TABLE
+ERROR:  subscription "s" could not connect to the publisher: connection to server at "<managed-18-host>" (<private-ip>), port 5432 failed: Connection timed out
+	Is the server running on that host and accepting TCP/IP connections?
+### 19: same, private address of 18
+ERROR:  subscription "s2" could not connect to the publisher: connection to server at "<private-ip>", port 5432 failed: Connection timed out
+	Is the server running on that host and accepting TCP/IP connections?
+
+### 19: subscription to 18 after allowing <private-ip>/32 on 18
+ERROR:  subscription "s" could not connect to the publisher: connection to server at "<managed-18-host>" (<private-ip>), port 5432 failed: FATAL:  permission denied to start WAL sender
+DETAIL:  Only roles with the REPLICATION attribute may start a WAL sender process.

@@ -1,0 +1,27 @@
+Finalize GroupAggregate  (cost=311398.16..311431.81 rows=100 width=72) (actual time=335.423..341.967 rows=100.00 loops=1)
+  Group Key: bid
+  Buffers: shared hit=163949
+  ->  Gather Merge  (cost=311398.16..311426.11 rows=240 width=96) (actual time=335.410..341.868 rows=300.00 loops=1)
+        Workers Planned: 2
+        Workers Launched: 2
+        Buffers: shared hit=163949
+        ->  Sort  (cost=310398.14..310398.39 rows=100 width=96) (actual time=333.200..333.204 rows=100.00 loops=3)
+              Sort Key: bid
+              Sort Method: quicksort  Memory: 39kB
+              Buffers: shared hit=163949
+              Worker 0:  Sort Method: quicksort  Memory: 39kB
+              Worker 1:  Sort Method: quicksort  Memory: 39kB
+              ->  Partial HashAggregate  (cost=310393.82..310394.82 rows=100 width=96) (actual time=333.136..333.154 rows=100.00 loops=3)
+                    Group Key: bid
+                    Batches: 1  Memory Usage: 48kB
+                    Buffers: shared hit=163935
+                    Worker 0:  Batches: 1  Memory Usage: 48kB
+                    Worker 1:  Batches: 1  Memory Usage: 48kB
+                    ->  Parallel Seq Scan on pgbench_accounts  (cost=0.00..247268.62 rows=1402782 width=97) (actual time=0.010..215.169 rows=476190.67 loops=3)
+                          Filter: (((aid % 7) = 3) OR ((abalance * 3) > aid))
+                          Rows Removed by Filter: 2857143
+                          Buffers: shared hit=163935
+Planning:
+  Buffers: shared hit=133
+Planning Time: 0.335 ms
+Execution Time: 342.049 ms

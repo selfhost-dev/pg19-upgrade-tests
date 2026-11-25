@@ -1,0 +1,26 @@
+# drill: md5  (2026-11-24T07:41:13Z, 18.7 -> 19.0)
+WARNING:  setting an MD5-encrypted password
+DETAIL:  MD5 password support is deprecated and will be removed in a future release of PostgreSQL.
+HINT:  Refer to the PostgreSQL documentation for details about migrating to another password type.
+
+### 19: login as an md5 user
+WARNING:  authenticated with an MD5-encrypted password
+DETAIL:  MD5 password support is deprecated and will be removed in a future release of PostgreSQL.
+ ok 
+----
+  1
+(1 row)
+
+
+### 19: settings
+md5_password_warnings|on
+password_encryption|scram-sha-256
+password_expiration_warning_threshold|604800
+
+### move to SCRAM
+md5user|SCRAM-SHA-256$
+ ok 
+----
+  1
+(1 row)
+
